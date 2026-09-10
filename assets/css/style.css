@@ -955,7 +955,7 @@ a {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   gap: 32px;
 }
 
@@ -1011,7 +1011,7 @@ a {
 }
 .member-card-jitin { background-image: url("../images/team/Jitin.jpeg"); }
 .member-card-atharv { background-image: url("../images/team/Atharva.jpeg"); }
-.member-card-ishika { background-image: url("../images/team/Ishika Batra.jpeg"); }
+.member-card-ekta { background-image: none; background-color: #000; }
 
 .member-card-photo::before {
   content: '';
@@ -1178,12 +1178,14 @@ a {
 .role-tag-speaker { background: #fda4af; }
 .role-tag-agentic { background: #a5f3fc; }
 .role-tag-design { background: #fbcfe8; }
+.role-tag-ml { background: #d9f99d; }
 
 .member-card-photo .role-tag-mentor { background: linear-gradient(135deg, #bae6fd, #67e8f9); }
 .member-card-photo .role-tag-leader { background: linear-gradient(135deg, #fef3c7, #fbbf24); }
 .member-card-photo .role-tag-agentic { background: linear-gradient(135deg, #ddd6fe, #a5b4fc); }
 .member-card-photo .role-tag-design { background: linear-gradient(135deg, #fbcfe8, #f9a8d4); }
 .member-card-photo .role-tag-speaker { background: linear-gradient(135deg, #fed7aa, #fb7185); }
+.member-card-photo .role-tag-ml { background: linear-gradient(135deg, #d9f99d, #a3e635); }
 
 .member-desc {
   font-size: 0.95rem;
@@ -1927,6 +1929,8 @@ a {
   border-radius: var(--radius-md);
   padding: 16px 20px;
   box-shadow: var(--shadow-sm);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-row-icon {
@@ -1943,6 +1947,36 @@ a {
   flex-shrink: 0;
 }
 
+.contact-row-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-row-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contact-row-value-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 6px;
+  margin-top: 2px;
+}
+
+.contact-row-value {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.contact-row-link {
+  font-weight: 700;
+  color: #0284c7;
+  overflow-wrap: anywhere;
+}
+
 .copy-email-chip {
   background: var(--bg-white);
   border: 1.5px solid #000;
@@ -1954,6 +1988,8 @@ a {
   margin-left: 10px;
   box-shadow: 1px 1px 0px #000;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .copy-email-chip:hover {
@@ -2257,9 +2293,14 @@ a {
     height: 6px;
   }
   .hero-title {
-    font-size: clamp(0.9rem, 4.4vw, 2rem);
+    font-size: clamp(1.7rem, 7.5vw, 2.3rem);
+    white-space: normal;
     letter-spacing: -0.8px;
     margin-bottom: 18px;
+  }
+
+  .hero-title .hero-typewriter {
+    min-width: 0;
   }
   .hero-desc {
     max-width: 620px;
@@ -2322,6 +2363,25 @@ a {
   .contact-neo-box {
     padding: 36px 20px;
   }
+  .footer-nav {
+    display: none;
+  }
+  .contact-row-item {
+    padding: 14px 16px;
+    gap: 14px;
+  }
+  .contact-row-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+  .contact-row-value,
+  .contact-row-link {
+    font-size: 0.92rem;
+  }
+  .copy-email-chip {
+    margin-left: 0;
+  }
   .hero-stats-strip {
     gap: 18px;
     padding: 14px 20px;
@@ -2346,6 +2406,9 @@ a {
   .module-directory-header {
     align-items: start;
     flex-direction: column;
+  }
+  .about-visual-card {
+    display: none;
   }
 }
 
