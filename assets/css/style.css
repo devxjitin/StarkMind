@@ -1118,7 +1118,7 @@ a {
   transform: translateY(0);
 }
 
-@media (hover: none) {
+@media (hover: none), (max-width: 1024px) {
   .member-card-photo .member-top { margin-bottom: 14px; }
   .member-card-photo .member-desc { max-height: 150px; margin-bottom: 20px; opacity: 1; transform: translateY(0); }
   .member-card-photo .member-skills { max-height: 100px; margin-bottom: 26px; opacity: 1; transform: translateY(0); }
