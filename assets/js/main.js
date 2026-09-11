@@ -498,7 +498,6 @@ const projectData = {
     description: 'A voice-only AI assistant for the web and Android that uses the Gemini Live API without requiring a backend server.',
     features: ['Natural voice-first interaction', 'React and TypeScript web application', 'Android WebView companion app', 'Serverless architecture using Gemini Live API'],
     tech: ['TypeScript', 'React', 'Gemini Live API', 'Android', 'Vite'],
-    demoUrl: 'https://github.com/devxjitin/Nirman-Lab-Voice-Assistant',
     githubUrl: 'https://github.com/devxjitin/Nirman-Lab-Voice-Assistant',
     isPublic: true
   },
@@ -508,7 +507,6 @@ const projectData = {
     description: 'A voice-controlled Windows desktop assistant that can talk naturally, interpret the screen and webcam, and control desktop tools on request.',
     features: ['Natural voice interaction', 'Screen and webcam awareness', 'Mouse and keyboard control', 'Terminal automation on request'],
     tech: ['Python', 'Computer Vision', 'Speech-to-Text', 'Windows Automation'],
-    demoUrl: 'https://github.com/devxjitin/ULTRON',
     githubUrl: 'https://github.com/devxjitin/ULTRON',
     isPublic: true
   },
@@ -587,7 +585,11 @@ function initProjectModal() {
       modalPublicActions.style.display = data.isPublic ? 'flex' : 'none';
       modalPublicActions.setAttribute('aria-hidden', String(!data.isPublic));
       if (data.isPublic) {
-        modalDemoLink.href = data.demoUrl;
+        modalDemoLink.hidden = !data.demoUrl;
+        modalDemoLink.style.display = data.demoUrl ? 'inline-flex' : 'none';
+        if (data.demoUrl) {
+          modalDemoLink.href = data.demoUrl;
+        }
         modalGithubLink.href = data.githubUrl;
       }
 
