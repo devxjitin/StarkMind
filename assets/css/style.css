@@ -1448,9 +1448,10 @@ a {
   margin-bottom: 42px;
 }
 
-.futurexpo-grid {
-  max-width: 980px;
+.projects-grid.futurexpo-grid {
+  max-width: 1180px;
   margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .futurexpo-card .project-card-header {
