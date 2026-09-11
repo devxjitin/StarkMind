@@ -961,17 +961,17 @@ a {
 
 @media (min-width: 1100px) {
   .team-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .member-card-vishwanil,
   .member-card-sonia {
-    grid-column: span 3;
+    grid-column: span 6;
     background-position: center 30%;
   }
 
   .team-member-card:not(.member-card-vishwanil):not(.member-card-sonia) {
-    grid-column: span 2;
+    grid-column: span 3;
   }
 }
 
@@ -1011,7 +1011,8 @@ a {
 }
 .member-card-jitin { background-image: url("../images/team/Jitin.jpeg"); }
 .member-card-atharv { background-image: url("../images/team/Atharva.jpeg"); }
-.member-card-ekta { background-image: none; background-color: #000; }
+.member-card-ekta { background-image: url("../images/team/Ekta Beniwal.jpeg"); }
+.member-card-ishika { background-image: url("../images/team/Ishika Batra.jpeg"); }
 
 .member-card-photo::before {
   content: '';
