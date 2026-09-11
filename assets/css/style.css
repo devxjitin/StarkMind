@@ -961,17 +961,12 @@ a {
 
 @media (min-width: 1100px) {
   .team-grid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .member-card-vishwanil,
   .member-card-sonia {
-    grid-column: span 6;
     background-position: center 30%;
-  }
-
-  .team-member-card:not(.member-card-vishwanil):not(.member-card-sonia) {
-    grid-column: span 3;
   }
 }
 
