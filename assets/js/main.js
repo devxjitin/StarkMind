@@ -517,6 +517,7 @@ const projectData = {
     features: ['Work Silently', 'Deep Analyze Questions', 'Global hotkey controls', 'Windows desktop','Undetectable'],
     tech: ['Python', 'Exam Cheat', 'PyAutoGUI', 'Screen Capture', 'Windows'],
     demoVideo: 'assets/videos/Examina.mp4',
+    websiteUrl: 'https://examina.devxjitin.dev',
     isPublic: false
   }
 };
@@ -536,7 +537,9 @@ function initProjectModal() {
   const modalDemoLink = document.getElementById('modalDemoLink');
   const modalGithubLink = document.getElementById('modalGithubLink');
   const modalPublicActions = document.getElementById('modalPublicActions');
-  const modalVideoWrap = document.getElementById('modalProjectVideoWrap');
+  const modalWebsiteActions = document.getElementById('modalWebsiteActions');
+  const modalWebsiteLink = document.getElementById('modalWebsiteLink');
+  const modalVideoWrap =document.getElementById('modalProjectVideoWrap');
   const modalVideo = document.getElementById('modalProjectVideo');
 
   detailButtons.forEach((btn) => {
@@ -577,6 +580,11 @@ function initProjectModal() {
       modalTechStack.innerHTML = data.tech
         .map((tech) => `<span class="tech-chip">${tech}</span>`)
         .join('');
+
+      if (modalWebsiteActions && modalWebsiteLink) {
+        modalWebsiteActions.hidden = !data.websiteUrl;
+        if (data.websiteUrl) modalWebsiteLink.href = data.websiteUrl;
+      }
 
       // Xperiments are private, so their detail view is strictly informational.
       // Use an explicit display value as well as `hidden` so site styles cannot
